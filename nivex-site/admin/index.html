@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NIVEX · Panel de contenido</title>
+  <link rel="icon" href="../assets/img/logo-mark.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap">
+  <style>
+    :root{
+      --bg:#0B1120;--bg2:#131d33;--ink:#EAF0FA;--soft:#B6C2D6;--mute:#7E8CA6;
+      --accent:#1F6AE1;--accent2:#4B8BF5;--brd:rgba(255,255,255,.1);--glass:rgba(255,255,255,.045);
+      --radius:16px;--sans:"Manrope",system-ui,sans-serif;
+    }
+    *{box-sizing:border-box;margin:0}
+    body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.6;
+      background-image:radial-gradient(50% 40% at 15% 5%,rgba(31,106,225,.18),transparent 60%);min-height:100vh}
+    a{color:var(--accent2);text-decoration:none}
+    .wrap{max-width:880px;margin:0 auto;padding:2rem 1.4rem 4rem}
+    header.top{display:flex;align-items:center;justify-content:space-between;gap:1rem;margin-bottom:2rem;flex-wrap:wrap}
+    .brand{display:flex;align-items:center;gap:.7rem}
+    .brand img{height:34px}
+    .brand b{letter-spacing:.06em;font-weight:800}
+    .pill{font-size:.78rem;color:var(--mute);border:1px solid var(--brd);padding:.3rem .7rem;border-radius:100px}
+    h1{font-size:1.6rem;margin-bottom:.4rem}
+    .sub{color:var(--soft);margin-bottom:2rem;max-width:60ch}
+    .card{background:var(--glass);border:1px solid var(--brd);border-radius:var(--radius);padding:1.4rem;margin-bottom:1.2rem}
+    .card h2{font-size:1rem;letter-spacing:.04em;text-transform:uppercase;color:var(--accent2);margin-bottom:1rem}
+    label{display:block;font-size:.85rem;font-weight:600;color:var(--soft);margin:.9rem 0 .35rem}
+    input,textarea{width:100%;padding:.7rem .9rem;border-radius:10px;background:rgba(255,255,255,.04);
+      border:1px solid var(--brd);color:var(--ink);font:inherit}
+    input:focus,textarea:focus{outline:none;border-color:var(--accent2)}
+    textarea{resize:vertical;min-height:80px}
+    .row{display:grid;gap:1rem}
+    @media(min-width:640px){.row.two{grid-template-columns:1fr 1fr}}
+    .actions{position:sticky;bottom:0;display:flex;gap:.8rem;flex-wrap:wrap;padding:1rem 0;background:linear-gradient(transparent,var(--bg) 30%)}
+    .btn{display:inline-flex;align-items:center;gap:.5rem;padding:.8rem 1.4rem;border-radius:100px;font-weight:700;cursor:pointer;border:0;font:inherit}
+    .btn-primary{background:linear-gradient(135deg,var(--accent2),var(--accent));color:#fff}
+    .btn-ghost{background:var(--glass);border:1px solid var(--brd);color:var(--ink)}
+    .gate{max-width:420px;margin:8vh auto;text-align:center}
+    .gate .card{text-align:left}
+    .note{font-size:.85rem;color:var(--mute);margin-top:.6rem}
+    .ok{color:#7fdca0}.err{color:#ff8a8a}
+    .hidden{display:none}
+    code{background:rgba(255,255,255,.08);padding:.1rem .4rem;border-radius:6px;font-size:.85em}
+    .info{font-size:.85rem;color:var(--mute);border-left:2px solid var(--accent);padding-left:1rem;margin-top:1rem}
+  </style>
+</head>
+<body>
+  <!-- Gate -->
+  <div class="wrap gate" id="gate">
+    <div class="brand" style="justify-content:center;margin-bottom:1.5rem">
+      <img src="../assets/img/logo-mark.svg" alt=""><b>NIVEX · Panel</b>
+    </div>
+    <div class="card">
+      <h2>Acceso</h2>
+      <label for="user">Usuario</label>
+      <input id="user" type="text" autocomplete="username" placeholder="usuario">
+      <label for="pass">Contraseña</label>
+      <input id="pass" type="password" autocomplete="current-password" placeholder="••••••••">
+      <div style="margin-top:1.2rem">
+        <button class="btn btn-primary" id="loginBtn">Entrar</button>
+      </div>
+      <p class="note" id="loginNote"></p>
+      <p class="info">Acceso de demostración: <code>admin</code> / <code>nivex2026</code>. Cámbialo en <code>admin/admin.js</code> o conecta un backend real (ver instrucciones).</p>
+    </div>
+  </div>
+
+  <!-- Editor -->
+  <div class="wrap hidden" id="editor">
+    <header class="top">
+      <div class="brand"><img src="../assets/img/logo-mark.svg" alt=""><b>NIVEX · Panel de contenido</b></div>
+      <span class="pill" id="who"></span>
+    </header>
+    <h1>Editar contenido del sitio</h1>
+    <p class="sub">Cambia los textos principales y guarda. La vista previa se aplica de inmediato en tu navegador; para publicar en el sitio real, descarga el archivo actualizado y súbelo a tu hosting.</p>
+
+    <div class="card">
+      <h2>Encabezado (Hero)</h2>
+      <label for="e-kicker">Etiqueta superior</label>
+      <input id="e-kicker" data-path="hero.kicker">
+      <label for="e-title">Título principal (admite <code>&lt;em&gt;…&lt;/em&gt;</code>)</label>
+      <input id="e-title" data-path="hero.title">
+      <label for="e-sub">Subtítulo</label>
+      <textarea id="e-sub" data-path="hero.sub"></textarea>
+    </div>
+
+    <div class="card">
+      <h2>El modelo</h2>
+      <label for="e-model">Introducción</label>
+      <textarea id="e-model" data-path="model.intro"></textarea>
+    </div>
+
+    <div class="card">
+      <h2>Contacto</h2>
+      <div class="row two">
+        <div><label for="e-email">Correo</label><input id="e-email" data-path="email"></div>
+        <div><label for="e-loc">Ubicación</label><input id="e-loc" data-path="location"></div>
+      </div>
+      <label for="e-tagline">Lema (footer)</label>
+      <input id="e-tagline" data-path="tagline">
+    </div>
+
+    <p class="note ok hidden" id="savedNote">✓ Cambios guardados como vista previa. Abre el sitio para verlos.</p>
+
+    <div class="actions">
+      <button class="btn btn-primary" id="saveBtn">Guardar vista previa</button>
+      <button class="btn btn-ghost" id="downloadBtn">Descargar manifest.js para publicar</button>
+      <button class="btn btn-ghost" id="resetBtn">Restablecer</button>
+      <a class="btn btn-ghost" href="../index.html" target="_blank">Ver sitio ↗</a>
+      <button class="btn btn-ghost" id="logoutBtn" style="margin-left:auto">Salir</button>
+    </div>
+
+    <p class="info">
+      <b>¿Cómo publicar los cambios?</b> Tras editar, pulsa <i>«Descargar manifest.js»</i> y reemplaza el archivo
+      <code>lib/manifest.js</code> en tu hosting (Hostinger → Administrador de archivos, o por FTP).
+      Para edición multiusuario sin descargar archivos, conecta un backend (ver <code>admin/README-backend.txt</code>).
+    </p>
+  </div>
+
+  <script defer src="../lib/manifest.js"></script>
+  <script defer src="admin.js"></script>
+</body>
+</html>
