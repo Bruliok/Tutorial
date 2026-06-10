@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 430 110" role="img" aria-label="NIVEX">
+  <defs>
+    <linearGradient id="hexl" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#3a3a3a"/><stop offset="0.55" stop-color="#262626"/><stop offset="1" stop-color="#141414"/>
+    </linearGradient>
+    <linearGradient id="bluel" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#5C97F7"/><stop offset="0.5" stop-color="#1F6AE1"/><stop offset="1" stop-color="#0E47A8"/>
+    </linearGradient>
+    <linearGradient id="bevell" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#4a4a4a"/><stop offset="1" stop-color="#202020"/>
+    </linearGradient>
+  </defs>
+  <g transform="translate(5,5)">
+    <path d="M50 4 L90 27 L90 73 L50 96 L10 73 L10 27 Z" fill="url(#hexl)" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+    <path d="M50 4 L90 27 L50 50 L10 27 Z" fill="url(#bevell)" opacity="0.55"/>
+    <path d="M30 72 L30 28 L40 28 L40 72 Z" fill="#F4F4F4"/>
+    <path d="M40 28 L50 28 L70 72 L60 72 Z" fill="url(#bluel)"/>
+    <path d="M60 72 L60 28 L70 28 L70 72 Z" fill="#F4F4F4"/>
+  </g>
+  <text x="120" y="70" font-family="Manrope,Inter,Arial,sans-serif" font-size="54" font-weight="800" letter-spacing="3" fill="#F5F7FA">NIVE<tspan fill="#4B8BF5">X</tspan></text>
+</svg>
