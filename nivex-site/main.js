@@ -20,17 +20,6 @@
     $$("[data-edit-href]").forEach(el => {
       const v = get(el.dataset.editHref); if (v != null) { el.textContent = v; el.setAttribute("href", "mailto:" + v); }
     });
-    // localStorage overrides (written by admin panel)
-    try {
-      const saved = JSON.parse(localStorage.getItem("nivex_content") || "null");
-      if (saved) {
-        Object.keys(saved).forEach(path => {
-          const val = saved[path];
-          $$(`[data-edit="${path}"]`).forEach(el => el.textContent = val);
-          $$(`[data-edit-html="${path}"]`).forEach(el => el.innerHTML = val);
-        });
-      }
-    } catch (_) {}
   }
 
   /* ---- Splash ---- */

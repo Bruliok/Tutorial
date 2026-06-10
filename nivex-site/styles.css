@@ -351,11 +351,9 @@ em { font-style: italic; }
 .footer-col h4 { font-size: .82rem; letter-spacing: .12em; text-transform: uppercase; color: var(--text-mute); margin-bottom: 1rem; }
 .footer-col a, .footer-col span { display: block; color: var(--text-soft); padding: .25rem 0; transition: color .25s; }
 .footer-col a:hover { color: var(--accent-2); }
-.footer-bottom { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .8rem;
+.footer-bottom { display: flex; flex-wrap: wrap; justify-content: center; gap: .8rem;
   margin-top: 2.5rem; padding-top: 1.5rem; border-top: 1px solid var(--line);
   font-size: .85rem; color: var(--text-mute); }
-.footer-admin { color: var(--text-mute); transition: color .25s; }
-.footer-admin:hover { color: var(--accent-2); }
 
 /* ---------- 16. Cursor ---------- */
 .cursor {

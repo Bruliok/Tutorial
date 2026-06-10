@@ -12,25 +12,16 @@ HTTP; en el hosting funcionan al 100%.)
 2. Abre la carpeta `public_html` (bórrale el contenido de ejemplo si lo hay).
 3. Sube **todo el contenido de esta carpeta** (no la carpeta, sino lo de adentro):
    `index.html`, `styles.css`, `main.js`, `.htaccess`, `site.webmanifest`,
-   y las carpetas `assets/`, `lib/`, `admin/`.
+   y las carpetas `assets/`, `lib/`.
    - Tip: comprime todo en un .zip, súbelo y usa "Extraer" en el administrador.
 4. Listo. Tu dominio ya mostrará el sitio.
 
 > El archivo `.htaccess` ya está incluido y evita problemas de caché tras cada
 > actualización. Si tu hosting no lo muestra, activa "ver archivos ocultos".
 
-## 3. Editar los textos (panel de contenido)
-- Entra a `tudominio.cl/admin/`
-- Usuario de demo: **admin** · Contraseña: **nivex2026**
-  (cámbialos en `admin/admin.js`, variable `USERS`).
-- Edita los textos → **Guardar vista previa** (se ven al instante en tu navegador).
-- Para publicarlos en el sitio real: **Descargar manifest.js** y reemplaza el
-  archivo `lib/manifest.js` en el hosting.
-
-### Multiusuario real (varias personas editando en vivo)
-Al ser un sitio estático no hay base de datos. Para edición multiusuario real,
-revisa `admin/README-backend.txt`: la opción más directa con tu hosting es un
-pequeño backend PHP + MySQL (se puede programar sobre esta misma web).
+## 3. Editar los textos
+Todo el contenido editable vive en `lib/manifest.js`. Para cambiar un texto,
+edita el valor correspondiente en ese archivo y vuelve a subirlo al hosting.
 
 ## 4. El logo
 En `assets/img/` tienes el logo en varios formatos:
